@@ -1,16 +1,37 @@
 ---
-
+import "../global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>TORO BURGER SOBRAL</title>
+  </head>
+  <body>
+    <div class="grid min-h-screen bg-toro-3 place-content-center">
+      <div class="w-[300px] md:w-[360px]">
+        <div class="max-w-[160px] mb-8 text-center mx-auto">
+          <img src="/logo.png" alt="TORO BURGER" />
+        </div>
+        <div
+          class="flex flex-col w-full gap-2 links text-xl font-light text-center justify-center items-center"
+        >
+          <div class="bg-toro-6 h-15 w-[90%] rounded-t-full"></div>
+          <a class="bg-toro-1 rounded-full w-[95%]" href="/app">
+            PEDE O SEU TORO
+          </a>
+          <a class="bg-toro-4 rounded-full w-[95%]" href="/ifood">
+            Pede pelo iFood
+          </a>
+          <a class="bg-toro-5 rounded-full w-[105%]" href="/whatsapp">
+            Deu BO no seu pedido? Chama aqui.
+          </a>
+          <div class="bg-toro-6 h-15 w-[90%] rounded-b-full"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
