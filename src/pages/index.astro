@@ -1,5 +1,6 @@
 ---
 import "../global.css";
+import Burger from "../components/burger.astro";
 ---
 
 <html lang="pt-br">
@@ -13,25 +14,13 @@ import "../global.css";
   <body>
     <div class="grid min-h-screen bg-toro-3 place-content-center">
       <div class="w-[300px] md:w-[360px]">
-        <div class="max-w-[160px] text-center mx-auto">
+        <div class="max-w-[160px] text-center mx-auto anim">
           <img src="/logo.png" alt="TORO BURGER" />
         </div>
-        <div
-          class="flex flex-col my-8 w-full gap-2 links text-xl font-light text-center justify-center items-center"
-        >
-          <div class="bg-toro-6 h-15 w-[90%] rounded-t-full"></div>
-          <a class="bg-toro-1 rounded-full w-[95%]" href="/app">
-            PEDE O SEU TORO AQUI
-          </a>
-          <a class="bg-toro-4 rounded-full w-[95%]" href="/ifood">
-            Pede pelo iFood
-          </a>
-          <a class="bg-toro-5 rounded-full w-[105%]" href="/whatsapp">
-            Deu BO no seu pedido? Chama aqui.
-          </a>
-          <div class="bg-toro-6 h-15 w-[90%] rounded-b-full"></div>
-        </div>
-        <div class="flex gap-2 justify-center font-semibold text-sm">
+
+        <Burger client:load />
+
+        <div class="flex gap-2 justify-center font-semibold text-sm fade">
           <div class="flex items-center gap-1">
             <div>toroburgersobral</div>
             <a href="https://instagram.com/toroburgersobral" target="_blank">
@@ -70,3 +59,27 @@ import "../global.css";
     </div>
   </body>
 </html>
+
+<script>
+  import { gsap } from "gsap";
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.from(".anim", {
+      opacity: 0,
+      y: -200,
+      duration: 1,
+      ease: "elastic.out(0.7,0.7)",
+      stagger: {
+        from: "end",
+        amount: 0.5,
+      },
+      delay: 0.1,
+    });
+  });
+
+  gsap.from(".fade", {
+    opacity: 0,
+    duration: 1,
+    y: 50,
+    delay: 0.2,
+  });
+</script>

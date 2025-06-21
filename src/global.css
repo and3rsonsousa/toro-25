@@ -10,5 +10,5 @@
 }
 
 .links a{
-  @apply hover:opacity-90 text-white font-semibold tracking-tighter p-4;
+  @apply hover:opacity-90 text-white font-semibold tracking-tighter p-4 hover:scale-[1.1];
 } 

@@ -1,0 +1,51 @@
+---
+import Item from "./item.astro";
+---
+
+<div
+  class="flex flex-col my-8 w-full gap-2 links text-xl font-light text-center justify-center items-center"
+>
+  {
+    [
+      {
+        classes: "bg-toro-6 h-24 w-[90%] rounded-t-full",
+        layer: "layer-1",
+        rotate: "rotate(-5deg)",
+      },
+      {
+        classes: "bg-toro-1 w-[95%] rounded-full",
+        text: "PEDE O SEU TORO AQUI",
+        link: "/app",
+        layer: "layer-2",
+        rotate: "rotate(2deg)",
+      },
+      {
+        classes: "bg-toro-4 w-[90%] rounded-full",
+        text: "Pede pelo iFood",
+        link: "/ifood",
+        layer: "layer-3",
+        rotate: "rotate(-3deg)",
+      },
+      {
+        classes: "bg-toro-5 w-[105%] rounded-full",
+        text: "Deu BO no seu pedido? Chama aqui.",
+        link: "/whatsapp",
+        layer: "layer-4",
+        rotate: "rotate(2deg)",
+      },
+      {
+        classes: "bg-toro-6 h-15 w-[90%] rounded-b-full",
+        layer: "layer-6",
+      },
+    ].map((item) => (
+      <Item
+        classes={item.classes}
+        text={item.text}
+        link={item.link}
+        layer={item.layer}
+        rotate={item.rotate}
+        client:load
+      />
+    ))
+  }
+</div>
