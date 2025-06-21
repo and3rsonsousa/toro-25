@@ -119,12 +119,40 @@ import Item from "../components/item.astro";
       },
       delay: 0.1,
     });
+
+    gsap.from(".fade", {
+      opacity: 0,
+      duration: 1,
+      y: 50,
+      delay: 0.2,
+    });
   });
 
-  gsap.from(".fade", {
-    opacity: 0,
-    duration: 1,
-    y: 50,
-    delay: 0.2,
+  document.querySelectorAll("a.anim").forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      gsap.to(element, {
+        scale: 1.05,
+        duration: 0.3,
+        zIndex: 10,
+        ease: "power1.out",
+      });
+    });
+
+    element.addEventListener("mouseout", () => {
+      gsap.to(element, {
+        scale: 1,
+        duration: 0.3,
+        zIndex: 0,
+        ease: "power1.out",
+      });
+    });
+
+    element.addEventListener("click", () => {
+      gsap.to(element, {
+        scale: 0.8,
+        duration: 0.5,
+        ease: "elastic.out(1,0.4)",
+      });
+    });
   });
 </script>
